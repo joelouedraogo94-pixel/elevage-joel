@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e7">
+  <meta name="description" content="La Ferme de Djikofai, élevage de volailles et de bétail à Ouagadougou. Des animaux élevés avec soin, près de chez vous.">
+  <title>Ferme de Djikofai — Élevage local à Ouagadougou</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f4f0e7;
+      --ink: #202a1d;
+      --green: #274b35;
+      --green-soft: #dce5d7;
+      --gold: #e5ad36;
+      --red: #bd5139;
+      --white: #fffdf7;
+      --line: rgba(32, 42, 29, .19);
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 24px; height: 2px; background: currentColor; }
+
+    .site-header { height: 82px; display: flex; align-items: center; border-bottom: 1px solid var(--line); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; gap: 28px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-mark { width: 42px; aspect-ratio: 1; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: var(--gold); font: 700 21px var(--serif); }
+    .brand-name { display: grid; gap: 2px; font: 600 18px/1 var(--serif); }
+    .brand-name small { font: 600 9px var(--sans); letter-spacing: .15em; text-transform: uppercase; }
+    .main-nav { display: flex; align-items: center; gap: 32px; }
+    .main-nav a { font-size: 13px; font-weight: 600; text-decoration: none; }
+    .main-nav a:hover { color: var(--red); }
+    .nav-cta, .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 12px; padding: 0 20px; border: 0; background: var(--green); color: white; font: 700 12px var(--sans); text-decoration: none; transition: background .2s, transform .2s; }
+    .nav-cta:hover, .button:hover { background: var(--red); transform: translateY(-2px); }
+    .nav-cta span, .button span { font-size: 17px; }
+    .menu-toggle { display: none; width: 42px; aspect-ratio: 1; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 20px; }
+
+    .hero { min-height: 630px; display: flex; align-items: center; position: relative; isolation: isolate; overflow: hidden; color: var(--white); background: #435d37; }
+    .hero::before { content: ""; position: absolute; z-index: -2; inset: 0; background: url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2200&q=85") center 54% / cover; }
+    .hero::after { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(22, 37, 26, .83) 0%, rgba(22, 37, 26, .57) 47%, rgba(22, 37, 26, .08) 100%); }
+    .hero-content { width: min(720px, 78%); padding: 88px 0 112px; }
+    .hero .eyebrow { color: #f3c85e; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; }
+    h1 { max-width: 680px; margin-bottom: 22px; font-size: clamp(48px, 7vw, 82px); line-height: .99; letter-spacing: 0; }
+    h1 em { color: #f2c152; font-style: normal; }
+    .hero-copy { max-width: 460px; margin-bottom: 32px; color: rgba(255, 253, 247, .88); font-size: 16px; line-height: 1.75; }
+    .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .hero .button { background: var(--gold); color: var(--ink); }
+    .hero .button:hover { background: var(--white); }
+    .text-link { display: inline-flex; align-items: center; gap: 9px; color: inherit; font-size: 12px; font-weight: 700; text-decoration: none; }
+    .text-link:hover { color: var(--gold); }
+    .hero-stamp { position: absolute; right: max(24px, calc((100vw - 1180px) / 2)); bottom: 32px; display: flex; align-items: center; gap: 12px; color: white; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .hero-stamp::before { content: ""; width: 30px; height: 1px; background: var(--gold); }
+
+    .intro { padding: 88px 0 94px; }
+    .intro-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 90px; align-items: end; }
+    .intro h2, .section-heading { max-width: 650px; margin-bottom: 0; font-size: clamp(36px, 5vw, 58px); line-height: 1.04; }
+    .intro-copy { max-width: 470px; padding-bottom: 4px; color: #596052; font-size: 15px; line-height: 1.85; }
+    .intro-copy p { margin-bottom: 20px; }
+    .inline-link { color: var(--green); font-size: 12px; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+
+    .offer { padding: 76px 0 90px; background: var(--green); color: var(--white); }
+    .offer-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 42px; }
+    .offer .eyebrow { color: #f1c257; }
+    .offer .section-heading { max-width: 560px; }
+    .offer-note { max-width: 270px; margin: 0 0 4px; color: rgba(255,255,255,.72); font-size: 13px; line-height: 1.7; }
+    .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .offer-item { display: grid; grid-template-columns: 1fr 1fr; min-height: 330px; background: #f4f0e7; color: var(--ink); }
+    .offer-photo { min-height: 100%; overflow: hidden; }
+    .offer-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .offer-item:hover .offer-photo img { transform: scale(1.04); }
+    .offer-copy { display: flex; flex-direction: column; align-items: flex-start; padding: 28px 24px; }
+    .offer-number { margin-bottom: auto; color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+    .offer-copy h3 { margin: 35px 0 12px; font-size: 30px; }
+    .offer-copy p { margin-bottom: 21px; color: #596052; font-size: 13px; line-height: 1.7; }
+    .offer-copy .text-link { color: var(--green); }
+
+    .values { padding: 92px 0 96px; }
+    .values-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 45px; }
+    .values-head .section-heading { max-width: 560px; }
+    .values-head > p { max-width: 400px; margin-bottom: 4px; color: #596052; font-size: 14px; line-height: 1.8; }
+    .value-list { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+    .value { padding: 26px 28px 12px 0; border-right: 1px solid var(--line); }
+    .value + .value { padding-left: 28px; }
+    .value:last-child { border-right: 0; }
+    .value-icon { display: grid; width: 42px; height: 42px; margin-bottom: 26px; place-items: center; border-radius: 50%; background: var(--gold); color: var(--ink); font-size: 19px; }
+    .value h3 { margin-bottom: 9px; font-size: 22px; }
+    .value p { max-width: 270px; margin-bottom: 0; color: #64695e; font-size: 13px; line-height: 1.7; }
+
+    .visit { display: grid; grid-template-columns: 1fr 1fr; min-height: 440px; background: #e9dfc9; }
+    .visit-image { min-height: 400px; overflow: hidden; }
+    .visit-image img { width: 100%; height: 100%; object-fit: cover; }
+    .visit-copy { align-self: center; max-width: 530px; padding: 56px clamp(30px, 7vw, 90px); }
+    .visit-copy h2 { margin-bottom: 18px; font-size: clamp(38px, 4vw, 53px); line-height: 1.02; }
+    .visit-copy > p:not(.eyebrow) { margin-bottom: 26px; color: #596052; font-size: 14px; line-height: 1.8; }
+    .visit-address { display: flex; align-items: flex-start; gap: 13px; margin: 0 0 26px; font-size: 13px; font-weight: 700; line-height: 1.55; }
+    .visit-address span { color: var(--red); font-size: 18px; }
+
+    .contact { padding: 86px 0 92px; background: var(--gold); }
+    .contact-inner { display: flex; justify-content: space-between; align-items: center; gap: 42px; }
+    .contact h2 { max-width: 610px; margin-bottom: 13px; font-size: clamp(38px, 5vw, 58px); line-height: 1; }
+    .contact p:not(.eyebrow) { max-width: 480px; margin-bottom: 0; color: #43472f; font-size: 14px; line-height: 1.7; }
+    .contact .eyebrow { color: var(--red); }
+    .contact .button { flex: 0 0 auto; background: var(--ink); }
+    .contact .button:hover { background: var(--red); }
+
+    footer { padding: 28px 0; background: var(--ink); color: var(--white); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .footer-inner p { margin: 0; color: rgba(255,255,255,.67); font-size: 11px; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: rgba(255,255,255,.82); font-size: 11px; text-decoration: none; }
+
+    @media (max-width: 820px) {
+      .main-nav { gap: 18px; }
+      .main-nav a { font-size: 12px; }
+      .nav-cta { display: none; }
+      .intro-grid { gap: 42px; }
+      .offer-grid { grid-template-columns: 1fr; }
+      .offer-item { min-height: 290px; }
+      .values-head { gap: 30px; }
+      .visit-copy { padding-inline: 36px; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 36px, 480px); }
+      .site-header { height: 70px; }
+      .brand-mark { width: 38px; }
+      .brand-name { font-size: 16px; }
+      .menu-toggle { display: grid; place-items: center; }
+      .main-nav { position: absolute; z-index: 5; top: 70px; left: 0; right: 0; display: none; padding: 18px 24px 24px; background: var(--paper); border-bottom: 1px solid var(--line); }
+      .main-nav.is-open { display: grid; gap: 0; }
+      .main-nav a { padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+      .main-nav a:last-child { border-bottom: 0; }
+      .hero { min-height: 610px; align-items: flex-end; }
+      .hero::before { background-position: 58% center; }
+      .hero::after { background: linear-gradient(0deg, rgba(22,37,26,.88), rgba(22,37,26,.35) 75%, rgba(22,37,26,.12)); }
+      .hero-content { width: 100%; padding: 110px 0 96px; }
+      h1 { font-size: clamp(48px, 13vw, 68px); }
+      .hero-copy { max-width: 380px; font-size: 14px; }
+      .hero-stamp { right: 18px; bottom: 18px; font-size: 9px; }
+      .intro { padding: 67px 0; }
+      .intro-grid, .values-head { grid-template-columns: 1fr; gap: 25px; }
+      .intro h2, .section-heading { font-size: 42px; }
+      .intro-copy { font-size: 14px; }
+      .offer { padding: 66px 0; }
+      .offer-head { display: block; margin-bottom: 28px; }
+      .offer-note { margin-top: 18px; }
+      .offer-grid { gap: 16px; }
+      .offer-item { grid-template-columns: 1fr 1fr; min-height: 260px; }
+      .offer-copy { padding: 20px 16px; }
+      .offer-copy h3 { margin-top: 25px; font-size: 24px; }
+      .offer-copy p { font-size: 12px; }
+      .values { padding: 67px 0; }
+      .values-head { margin-bottom: 28px; }
+      .value-list { grid-template-columns: 1fr; }
+      .value, .value + .value { display: grid; grid-template-columns: 48px 1fr; column-gap: 15px; padding: 21px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .value-icon { grid-row: span 2; margin: 0; }
+      .value h3 { margin: 0 0 5px; font-size: 20px; }
+      .value p { max-width: none; }
+      .visit { grid-template-columns: 1fr; }
+      .visit-image { min-height: 275px; max-height: 320px; }
+      .visit-copy { max-width: none; padding: 44px 24px 50px; }
+      .visit-copy h2 { font-size: 43px; }
+      .contact { padding: 63px 0; }
+      .contact-inner { display: block; }
+      .contact .button { margin-top: 25px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#accueil" aria-label="Ferme de Djikofai, accueil">
+        <span class="brand-mark" aria-hidden="true">F.</span>
+        <span class="brand-name">Ferme de Djikofai<small>Ouagadougou · Burkina Faso</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#ferme">La ferme</a>
+        <a href="#elevage">Nos élevages</a>
+        <a href="#visite">Nous trouver</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Visiter la ferme <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="wrap">
+        <div class="hero-content">
+          <p class="eyebrow">L'élevage de proximité, à Ouagadougou</p>
+          <h1>Bien élevés.<br><em>Tout près.</em></h1>
+          <p class="hero-copy">À Djikofai, nous élevons volailles et bétail avec attention. Des animaux suivis au quotidien, au cœur de votre quartier.</p>
+          <div class="hero-actions">
+            <a class="button" href="#elevage">Découvrir la ferme <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#visite">Nous trouver à Djikofai <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-stamp">Djikofai, Ouagadougou</div>
+    </section>
+
+    <section class="intro" id="ferme">
+      <div class="wrap intro-grid">
+        <div>
+          <p class="eyebrow">Une ferme près de chez vous</p>
+          <h2>Un élevage à taille humaine, ancré à Djikofai.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>Notre ferme rassemble deux savoir-faire : l'élevage de volailles et celui du bétail. Nous prenons soin de nos animaux chaque jour et accueillons les habitants de Ouagadougou qui recherchent un élevage local.</p>
+          <a class="inline-link" href="#elevage">Voir nos activités <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer" id="elevage">
+      <div class="wrap">
+        <div class="offer-head">
+          <div>
+            <p class="eyebrow">Nos élevages</p>
+            <h2 class="section-heading">Du soin au quotidien, de la ferme à vous.</h2>
+          </div>
+          <p class="offer-note">Les disponibilités et modalités de vente peuvent varier. La ferme vous accueille à Djikofai.</p>
+        </div>
+        <div class="offer-grid">
+          <article class="offer-item">
+            <div class="offer-photo"><img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=900&q=80" alt="Poules élevées dans un espace extérieur" loading="lazy"></div>
+            <div class="offer-copy">
+              <span class="offer-number">01 / VOLAILLE</span>
+              <h3>La volaille</h3>
+              <p>Un élevage suivi avec soin. Renseignez-vous sur les sujets disponibles et les prochaines ventes.</p>
+              <a class="text-link" href="#contact">Où nous trouver <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="offer-item">
+            <div class="offer-photo"><img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=900&q=80" alt="Troupeau de bétail dans un pâturage" loading="lazy"></div>
+            <div class="offer-copy">
+              <span class="offer-number">02 / BÉTAIL</span>
+              <h3>Le bétail</h3>
+              <p>Des animaux élevés avec attention. Parlons de vos besoins et des disponibilités de la ferme.</p>
+              <a class="text-link" href="#contact">Où nous trouver <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="values">
+      <div class="wrap">
+        <div class="values-head">
+          <div>
+            <p class="eyebrow">Notre engagement</p>
+            <h2 class="section-heading">Le sérieux d'une ferme de quartier.</h2>
+          </div>
+          <p>Choisir une ferme proche, c'est pouvoir échanger directement avec les éleveurs et connaître l'origine de ses animaux.</p>
+        </div>
+        <div class="value-list">
+          <article class="value">
+            <span class="value-icon" aria-hidden="true">⌂</span>
+            <h3>Tout près</h3>
+            <p>La ferme est installée à Djikofai, dans la commune de Ouagadougou.</p>
+          </article>
+          <article class="value">
+            <span class="value-icon" aria-hidden="true">♡</span>
+            <h3>Du soin, chaque jour</h3>
+            <p>Le bien-être des animaux fait partie du travail quotidien de la ferme.</p>
+          </article>
+          <article class="value">
+            <span class="value-icon" aria-hidden="true">↗</span>
+            <h3>Un échange direct</h3>
+            <p>Discutez directement avec nous pour vos questions et vos commandes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="visite">
+      <div class="visit-image"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80" alt="Paysage agricole verdoyant au lever du jour" loading="lazy"></div>
+      <div class="visit-copy">
+        <p class="eyebrow">À proximité</p>
+        <h2>La ferme est à Djikofai.</h2>
+        <p>Nous sommes situés à Djikofai, à Ouagadougou. Vérifiez les disponibilités avant votre visite et consultez l'itinéraire pour nous trouver.</p>
+        <p class="visit-address"><span aria-hidden="true">⌖</span><span>Djikofai<br>Ouagadougou, Burkina Faso</span></p>
+        <a class="button" href="https://www.google.com/maps/search/?api=1&query=Djikofai%2C%20Ouagadougou%2C%20Burkina%20Faso" target="_blank" rel="noopener noreferrer">Ouvrir dans Google Maps <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-inner">
+        <div>
+          <p class="eyebrow">À Djikofai</p>
+          <h2>Votre prochaine visite commence ici.</h2>
+          <p>La ferme est installée à Djikofai. Consultez l'itinéraire avant votre passage.</p>
+        </div>
+        <a class="button" href="https://www.google.com/maps/search/?api=1&query=Djikofai%2C%20Ouagadougou%2C%20Burkina%20Faso" target="_blank" rel="noopener noreferrer">Voir l'itinéraire <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> Ferme de Djikofai · Ouagadougou</p>
+      <div class="footer-links"><a href="#accueil">Accueil</a><a href="#elevage">Nos élevages</a><a href="#visite">Localisation</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    mainNav.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        mainNav.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      }
+    });
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
